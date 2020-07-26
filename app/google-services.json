@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "558626514531",
+    "firebase_url": "https://instaofficeserpost.firebaseio.com",
+    "project_id": "instaofficeserpost",
+    "storage_bucket": "instaofficeserpost.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558626514531:android:2d29bc3a7eb287cc99fa56",
+        "android_client_info": {
+          "package_name": "com.instaoffice.serpost"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "558626514531-q38fanv5j40bsmkcafh2fo4q8skposl3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.instaoffice.serpost",
+            "certificate_hash": "904f7d7e128edb440b12832e06ce260b6b11302e"
+          }
+        },
+        {
+          "client_id": "558626514531-m79oiu63d0k8kp99mue489fjt09fjv4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVH4X8-XjROVYCFUg2DVdQ0omMBLXztZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "558626514531-m79oiu63d0k8kp99mue489fjt09fjv4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
