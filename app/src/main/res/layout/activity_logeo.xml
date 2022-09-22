@@ -19,12 +19,7 @@
         android:layout_below="@id/toolbar_bar"
         android:padding="16dp">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:src="@drawable/serpost"
-            android:layout_margin="50dp"
-            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

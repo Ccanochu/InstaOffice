@@ -7,7 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
-
+//NOS VA SERVIR DE INTERMEDIARIO PARA LA ACTIVIDAD DE LAS NOTIFICACIONES
 public interface APIService {
     //Se ingresa la clave de autorización otorgada por FireBase para poder crear el servicio
 
@@ -18,7 +18,7 @@ public interface APIService {
             }
 
     )
-
+//SE LE ENVÍA LA NOTIFICACIÓN AL SERVIDOR DE FIREBASE
     @POST("fcm/send")
     Call<MyResponse>sendNotification(@Body Emisor body);
 }

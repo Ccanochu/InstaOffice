@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.google.android.gms.tasks.Continuation;
+/*import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -33,7 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
-import com.google.firebase.storage.UploadTask;
+import com.google.firebase.storage.UploadTask;*/
 import com.instaoffice.serpost.Model.Usuario;
 import com.instaoffice.serpost.R;
 
@@ -53,13 +53,13 @@ public class FragmentPerfil extends Fragment {
     EditText sedeUsuario;
     ImageButton guardarCambios;
     //Se inicializa las variables para FIrebase
-    DatabaseReference reference;
-    FirebaseUser fuser;
+    //DatabaseReference reference;
+    //FirebaseUser fuser;
     //Se inicializa las variables para el servicio de Storage de Firebase
-    StorageReference storageReference;
+    //StorageReference storageReference;
     private static final int IMAGE_REQUEST = 1;
     private Uri imageUri;
-    private StorageTask uploadTask;
+    //private StorageTask uploadTask;
 
 
     @Override
@@ -76,12 +76,12 @@ public class FragmentPerfil extends Fragment {
         guardarCambios=view.findViewById(R.id.guardarCambio);
 
         //Se obtiene la referencia de la instancia de base de datos para subir la foto
-        storageReference = FirebaseStorage.getInstance().getReference("imagenes");
+        //storageReference = FirebaseStorage.getInstance().getReference("imagenes");
         //Se obtiene el usuario atenticado y se busca la referencia del usuario en la tabla de usuarios
-        fuser = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(fuser.getUid());
+        /*fuser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(fuser.getUid());*/
 
-        reference.addValueEventListener(new ValueEventListener() {
+        /*reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Usuario usuario = dataSnapshot.getValue(Usuario.class);
@@ -102,7 +102,7 @@ public class FragmentPerfil extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
         image_profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,14 +132,14 @@ public class FragmentPerfil extends Fragment {
 
     private void actualizar(String txt_departamento, String txt_provincia, String txt_sede) {
 
-        reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(fuser.getUid());
+        //reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(fuser.getUid());
 
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("departamento", txt_departamento);
         hashMap.put("provincia",txt_provincia);
         hashMap.put("sede",txt_sede);
 
-        reference.updateChildren(hashMap);
+        //reference.updateChildren(hashMap);
     }
 
     //Este método permite abrir el explorador de archivos para subir una imagen
@@ -162,7 +162,7 @@ public class FragmentPerfil extends Fragment {
         pd.show();
         //Si la ruta imagen no es vacia, se sube la imagen al repositorio de Storage de Firebase
         if (imageUri != null){
-            final  StorageReference fileReference = storageReference.child(System.currentTimeMillis()
+            /*final  StorageReference fileReference = storageReference.child(System.currentTimeMillis()
                     +"."+getFileExtension(imageUri));
 
             uploadTask = fileReference.putFile(imageUri);
@@ -199,7 +199,7 @@ public class FragmentPerfil extends Fragment {
                     Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     pd.dismiss();
                 }
-            });
+            });*/
         } else {
             Toast.makeText(getContext(), "No se ha seleccionado imagen", Toast.LENGTH_SHORT).show();
         }
@@ -213,11 +213,11 @@ public class FragmentPerfil extends Fragment {
                 && data != null && data.getData() != null){
             imageUri = data.getData();
 
-            if (uploadTask != null && uploadTask.isInProgress()){
+            /*if (uploadTask != null && uploadTask.isInProgress()){
                 Toast.makeText(getContext(), "Subida en progreso", Toast.LENGTH_SHORT).show();
             } else {
                 uploadImage();
-            }
+            }*/
         }
     }
 }

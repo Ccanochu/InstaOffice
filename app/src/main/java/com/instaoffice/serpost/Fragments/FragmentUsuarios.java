@@ -12,14 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.google.firebase.auth.FirebaseAuth;
+/*import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ValueEventListener;*/
 import com.instaoffice.serpost.Adapter.UsuarioAdapter;
 import com.instaoffice.serpost.Model.Usuario;
 import com.instaoffice.serpost.R;
@@ -75,7 +75,7 @@ public class FragmentUsuarios extends Fragment {
 
     private void searchUsers(String s) {
 
-        final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
+        /*final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
         Query query = FirebaseDatabase.getInstance().getReference("Usuarios").orderByChild("busqueda")
                 .startAt(s)
                 .endAt(s+"\uf8ff");
@@ -102,13 +102,13 @@ public class FragmentUsuarios extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
 
     }
 
     private void leerUsuarios() {
 
-        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        /*final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Usuarios");
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -134,6 +134,6 @@ public class FragmentUsuarios extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
     }
 }

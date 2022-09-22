@@ -10,13 +10,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
+/*import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.FirebaseDatabase;*/
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
@@ -26,18 +26,20 @@ public class RegistroActivity extends AppCompatActivity {
     MaterialEditText nombreusuario, email, contrasena, departamento, provincia, sede;
     Button btn_registrar;
     //Se crea las variables para Firebase
-    FirebaseAuth auth;
-    DatabaseReference reference;
+    //FirebaseAuth auth;
+    //DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
         //Se instancia a la barra de superior que tendrá título Registrar en esta activity
         Toolbar toolbar = findViewById(R.id.toolbar_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Registrar");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Se instancian a los textbox del activity para obtener sus valores
         nombreusuario = findViewById(R.id.nombreusuario);
         email = findViewById(R.id.emailUsuario);
@@ -46,8 +48,10 @@ public class RegistroActivity extends AppCompatActivity {
         provincia=findViewById(R.id.provinciaUsuario);
         sede= findViewById(R.id.sedeUsuario);
         btn_registrar = findViewById(R.id.btn_registrar);
+
         //Se obtiene la instancia del servicio de autenticación de firebase
-        auth = FirebaseAuth.getInstance();
+        //auth = FirebaseAuth.getInstance();
+
         //Se agrega evento al boton registrar para recuperar los datos
         btn_registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +62,7 @@ public class RegistroActivity extends AppCompatActivity {
                 String txt_departamento = departamento.getText().toString();
                 String txt_provincia = provincia.getText().toString();
                 String txt_sede=sede.getText().toString();
+
                 //Si los elementos recuperados están vacíos, se envía un mensaje al activity solocitando que se llene
                 if (TextUtils.isEmpty(txt_nombreusuario) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_contrasena )||
                         TextUtils.isEmpty(txt_departamento)|| TextUtils.isEmpty(txt_provincia)|| TextUtils.isEmpty(txt_sede)){
@@ -73,11 +78,14 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
     }
+
     //El método registrar se encarga de crear el usuario en la base de datos Firebase
+
     //Tambien se encarga de añadir el correo y contraseña al servicio de autenticación de Firebase
     private void registrar(final String nombreusuario, String email, String password, String departamento, String provincia, String sede){
+
     //Se crea el usuario para autenticación al logear
-        auth.createUserWithEmailAndPassword(email, password)
+        /*auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -89,6 +97,7 @@ public class RegistroActivity extends AppCompatActivity {
                             //Se obtiene la instancia de la base de datos.
                             //Se obtiene la fila en la cual se encuentra el usuario a registrar
                             reference = FirebaseDatabase.getInstance().getReference("Usuarios").child(idUsuario);
+
                             //Se añade los datos necesarios para registrar al usuario
                             HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("id", idUsuario);
@@ -99,6 +108,8 @@ public class RegistroActivity extends AppCompatActivity {
                             hashMap.put("imagenURL", "default");
                             hashMap.put("estado", "Desconectado");
                             hashMap.put("busqueda", nombreusuario.toLowerCase());
+
+
                             //Al registrarse exitosamente, se redirige al activity principal. Ya que al registrar
                             //se logea automaticamente
                             reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -125,6 +136,6 @@ public class RegistroActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
-                });
+                });*/
     }
 }

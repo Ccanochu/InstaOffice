@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.instaoffice.serpost"
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -20,7 +22,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    buildToolsVersion '29.0.2'
+    buildToolsVersion '30.0.2'
 }
 
 dependencies {
@@ -36,23 +38,27 @@ dependencies {
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.google.firebase:firebase-auth:21.0.8'
+    implementation 'com.google.firebase:firebase-database:20.0.6'
+    implementation 'com.google.firebase:firebase-analytics:21.1.1'
+    implementation 'com.google.firebase:firebase-storage:20.0.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     //LIBRERÏAS DE FIREBASE
-    implementation 'com.google.firebase:firebase-auth:19.3.1'
-    implementation 'com.google.firebase:firebase-database:19.3.1'
-    implementation 'com.google.firebase:firebase-core:17.4.3'
-    implementation 'com.google.firebase:firebase-analytics:17.4.3'
-    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    //implementation 'com.google.firebase:firebase-auth:19.3.1' OK
+    //implementation 'com.google.firebase:firebase-database:19.3.1'
+    //implementation 'com.google.firebase:firebase-core:17.4.3'
+    //implementation 'com.google.firebase:firebase-analytics:17.4.3'
+    //implementation 'com.google.firebase:firebase-storage:19.1.1'
 
     //add these libraries
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.google.firebase:firebase-messaging:20.2.1'
+    //LIBRERÏAS DE FIREBASE - MESASAGING
+    //implementation 'com.google.firebase:firebase-messaging:20.2.1'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-apply plugin: 'com.google.gms.google-services'

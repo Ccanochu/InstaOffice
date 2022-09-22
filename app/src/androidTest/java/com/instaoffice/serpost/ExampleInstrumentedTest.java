@@ -19,9 +19,10 @@ public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
         // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
+        Context appContext;
+        /*appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.instaoffice.serpost", appContext.getPackageName());
+        assertEquals("com.instaoffice.serpost", appContext.getPackageName());*/
 
     }
 }

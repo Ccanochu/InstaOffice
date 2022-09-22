@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistroActivity">
-
+// ACA ESTAMOS INCLUYENDO LA BARRA SUPERIOR DE OTRO ACTIVITY
     <include
         android:id="@+id/toolbar_bar"
         layout="@layout/bar_layout"/>

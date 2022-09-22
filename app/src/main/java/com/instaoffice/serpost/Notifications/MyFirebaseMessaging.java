@@ -17,29 +17,30 @@ import androidx.core.app.NotificationCompat;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.FutureTarget;
 import com.bumptech.glide.request.target.Target;
-import com.google.firebase.database.DataSnapshot;
+/*import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.ValueEventListener;*/
 import com.instaoffice.serpost.Model.Usuario;
 import com.instaoffice.serpost.R;
-import com.google.firebase.auth.FirebaseAuth;
+/*import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.RemoteMessage;
+import com.google.firebase.messaging.RemoteMessage;*/
 import com.instaoffice.serpost.MensajeActivity;
 
 import java.util.concurrent.ExecutionException;
 
-public class MyFirebaseMessaging extends FirebaseMessagingService {
+public class MyFirebaseMessaging //extends FirebaseMessagingService
+{
 
     private static final String CHANNEL_ID = "com.instaoffice.serpost";
     private static final String CHANNEL_NAME = "serpost";
     private static final String CHANNEL_DESCRIPTION = "Aplicación de chat";
     String img="default";
 
-    @Override
+    /*@Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         String sented = remoteMessage.getData().get("sented");
@@ -83,7 +84,7 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
         //_____________________________________________________________________________________
 
         int notification_id = (int) System.currentTimeMillis();
@@ -92,13 +93,13 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
 
 
         //Set pending intent to builder
-        Intent intent = new Intent(this, MensajeActivity.class);
+        //Intent intent = new Intent(this, MensajeActivity.class);
         Bundle bundle = new Bundle();
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        //PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
         //Notification builder
-        if (notificationManager == null) {
+        /*if (notificationManager == null) {
             notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
 
@@ -151,5 +152,5 @@ public class MyFirebaseMessaging extends FirebaseMessagingService {
         }
 
         notificationManager.notify(1002, mBuilder.build());
-    }
+    }*/
 }
